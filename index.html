@@ -1,0 +1,437 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.0.4/css/bootstrap5-toggle.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.0.4/js/bootstrap5-toggle.ecmas.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet"/>
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<!-- <link rel="stylesheet" href='{% static "./static/css/style.css" %}'> -->
+<link
+rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>
+            Vendor Registration Form</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/dcalendar.picker.css" rel="stylesheet">
+        <style type="text/css">
+            #deceased {
+                background-color: wheat;
+                padding-top: 10px;
+                margin-bottom: 10px;
+            }
+            #companydet {
+                background-color: white;
+                padding-top: 10px;
+                margin-bottom: 10px;
+            }
+            .remove_field {
+                float: right;
+                cursor: pointer;
+                position: absolute;
+            }
+            .remove_field:hover {
+                text-decoration: none;
+            }
+
+            select#years {
+                height: 38px;
+            }
+
+
+            .sticky-header {
+                display: flex;
+                align-items: center;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                /* background-color: #007bff; */
+                color: white;
+                /* padding: 15px; */
+            }
+            .sticky-header img {
+                max-width: 116px;
+                margin-right: 10px;
+            }
+            .sticky-header h5 {
+                flex: 1;
+                text-align: center;
+                margin: 0;
+                color: black;
+                padding-right: 154px;
+            }
+
+
+            .sticky-footer {
+                margin-top: auto;
+                z-index: 1000;
+            }
+
+
+            .panel-body {
+                padding: 4px;
+                background-color: #DDEEF1;
+                max-height: calc(100vh - 100px);
+                overflow-y: auto;
+            }
+
+            body {
+                background-color: #19869C;
+            }
+
+
+            h3,
+            .h3 {
+                font-size: 24px;
+                padding-left: 38px;
+            }
+
+
+            .label-column {
+                text-align: right;
+                padding-right: 10px; /* Adjust this value as needed */
+                color: #666666;
+            }
+
+            .table-borderless > tbody > tr > td,
+            .table-borderless > tbody > tr > th,
+            .table-borderless > tfoot > tr > td,
+            .table-borderless > tfoot > tr > th,
+            .table-borderless > thead > tr > td,
+            .table-borderless > thead > tr > th {
+                border: none;
+            }
+
+            .table-borderless2 {
+                display: none;
+            }
+
+
+            .toggle.ios,
+            .toggle-on.ios,
+            .toggle-off.ios {
+                border-radius: 20rem;
+            }
+            .toggle.ios .toggle-handle {
+                border-radius: 20rem;
+            }
+
+
+            label {
+                display: inline-block;
+                max-width: 138%;
+                margin-bottom: 5px;
+                font-weight: 750;
+                color: #666666;
+                width: 110px;
+            }
+
+
+            .container-fluid {
+
+                margin-bottom: -17px;
+            }
+
+
+            .custom-footer {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-right: 20px; /* Add margin to the right side */
+            }
+
+            .custom-footer button {
+                margin-left: 10px; /* Add some space between the buttons */
+            }
+
+
+            .panel-heading {
+                padding: 5px 15px;
+                border-bottom: 1px solid transparent;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                height: 40px;
+            }
+
+
+            .panel {
+                border-radius: 0;
+            }
+
+
+
+            form {
+    margin-top: -16px;
+}
+        </style>
+
+    </head>
+    <body>
+
+        <div class="panel" style="    margin-top: 3px;
+        margin-left: 14px;
+        margin-right: 14px;
+        margin-bottom: 0px;
+        background-color: white;">
+            <div class="panel-heading">
+                <header class="sticky-header">
+
+                    <img src='{% static "./static/src/images/ril-side.jpg" %}' alt="Logo">
+                    <h5 class="text-center">Vendor Registration Form</h5>
+                </header>
+            </div>
+            <div class="panel-body">
+
+
+              
+        <!-- Start your project here-->
+
+
+
+                
+                  
+                  <form>
+
+                    <h3>Company Details</h3>
+                    <div class="col-md-12 col-sm-12" id="companydet">
+                        <div class="form-group col-md-6 col-sm-6">
+
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="CompanyNm">*Company Name:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="CompanyNm" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="Address1">Address 1:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="Address1" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="Address2">Address 2:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="Address2" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="Website">Website:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="Website" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="Fax">Fax:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="Fax" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="Phone">Phone:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="Phone" placeholder="">
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6">
+
+
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="Country">*Country:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="Country" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="State">*State:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="State" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="District">District:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="District" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="City">City:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="City" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="Pincode">Pincode:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="Pincode" placeholder="">
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <h3>Personal Details</h3>
+                    <div class="col-md-12 col-sm-12" id="companydet">
+                        <div class="form-group col-md-6 col-sm-6">
+
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="fname">*First Name:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="fname" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="LastName">*Last Name:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="LastName" placeholder="">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                        <div class="form-group col-md-6 col-sm-6">
+
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="Mobile">*Mobile:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="Mobile" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="Email">*Email ID:</label>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control input-sm" id="Email" placeholder="">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                        <div class="form-group col-md-12 col-sm-12">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td class="label-column">
+                                        <label for="address">Note:</label>
+                                    </td>
+
+                                    <td>
+                                        <textarea class="form-control input-sm" id="address" rows="3"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- <div class="form-check form-switch">
+                                                                                                                                                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked="checked">
+                                                                                                                                                                <label class="form-check-label" for="flexSwitchCheckChecked">Reliance Agent / Partner</label>
+                                                                                                                                                            </div>
+                                                                                                                                                        </div> -->
+
+                            <div
+                                class="form-check form-switch">
+                                <!-- <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> -->
+                                <input type="checkbox" checked data-toggle="toggle" data-style="ios">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Reliance Agent / Partner</label>
+                            </div>
+
+                        </div>
+
+
+                        <!-- <div class="col-md-12 col-sm-12">
+                                                                                                                                                    <div class="form-group col-md-3 col-sm-3">
+                                                                                                                                                        <input type="submit" class="btn btn-primary" value="Submit"/>
+                                                                                                                                                    </div>
+                                                                                                                                                </div> -->
+                    </form>
+                </div>
+            </div>
+
+            <footer class="sticky-footer bg-secondary py-3">
+                <div class="container custom-footer">
+                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-danger">Reset</button>
+                </div>
+            </footer>
+
+
+            <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+                                                                                                                                                                                                                                                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+                                                                                                                                                                                                                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
+        </body>
+
+
+        <script src='{% static "./static/js/jquery.min.js" %}'></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+
+        <script src='{% static "./static/js/main.js" %}'></script>
+    </body>
+</html>
